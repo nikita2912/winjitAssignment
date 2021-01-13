@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item *ngIf="encryptPass">
+    <p>Encrypted Password: {{encryptPass}}</p>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label>Machine Test (4 Hrs) <br>
+      1. Fetched All contacts<br>
+      2. Capture Snap from Camera and preview.<br>
+      3. Password Encryption and display.<br>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Here you can test any text for encryption.<br>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-input type="text" [(ngModel)]="testName" placeholder="Enter text" id="input"></ion-input><br>
+    <ion-button (click)="encryptText(testName)" expand="block">Go</ion-button><br>
+  </ion-item>
+  <ion-item>
+    <ion-label>Encrypted text: {{encryptedText}}</ion-label>
+  </ion-item>
+
 </ion-content>

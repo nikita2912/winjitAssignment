@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab center bottom (click)="takeSnap()">
+    <button class="fabBtn">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-item class="itemLable" lines="none">
+    <ion-label>To Take a picture click here
+    </ion-label>
+  </ion-item>
+
+  <div *ngIf="capturedSnapURL">
+    <p>Capture picture is:</p>
+    <ion-item>
+      <img [src]="capturedSnapURL" />
+    </ion-item>
+  </div>
+</ion-content>

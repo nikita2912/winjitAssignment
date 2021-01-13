@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Contacts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let c of contactList">
+    <ion-item>
+      <ion-label>{{ c.name.givenName }} <b>{{ c.name.familyName }}</b>
+        <p>{{ c.phoneNumbers[ 0 ].value }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
